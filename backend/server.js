@@ -1,17 +1,15 @@
-import express from "express";
-import cors from "cors";
-
+const express = require("express");
+const cors = require("cors");
 const app = express();
+const PORT = 5000;
+
 app.use(cors());
 app.use(express.json());
 
-// Simple test route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to BuildMate Backend API 🚀" });
+  res.send("BuildMate Backend is running 🚀");
 });
 
-// Start server
-const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
